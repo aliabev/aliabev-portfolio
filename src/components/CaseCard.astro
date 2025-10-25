@@ -1,0 +1,13 @@
+---
+const { title, subtitle, cover, slug, impact = [] } = Astro.props;
+---
+<a href={`/cases/${slug}`} class="block group rounded-2xl border border-gray-200 hover:border-gray-300 p-4 transition bg-white">
+  {cover && <img src={cover} alt={title} class="w-full aspect-[16/9] object-cover rounded-xl mb-4" loading="lazy" />}
+  <h3 class="text-xl font-semibold mb-1 group-hover:underline">{title}</h3>
+  {subtitle && <p class="text-gray-600 mb-2">{subtitle}</p>}
+  {impact?.length > 0 && (
+    <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1">
+      {impact.slice(0,2).map((line) => <li>{line}</li>)}
+    </ul>
+  )}
+</a>

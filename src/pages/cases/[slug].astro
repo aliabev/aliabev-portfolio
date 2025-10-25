@@ -1,0 +1,49 @@
+---
+import '../../styles/global.css';
+
+const modules = import.meta.glob('../../content/cases/*.mdx', { eager: true });
+const slug = Astro.params.slug;
+const entry = Object.entries(modules).find(([p]) => p.endsWith(`${slug}.mdx`));
+
+if (!entry) {
+  return Astro.redirect('/', 302);
+}
+const [, mod] = entry;
+const { frontmatter, default: Content } = mod;
+const { title, subtitle, period, role = [], impact = [], cover } = frontmatter;
+---
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — кейс</title>
+    <meta name="description" content={subtitle || title} />
+  </head>
+  <body>
+    <main class="max-w-3xl mx-auto px-4 py-8">
+      <a href="/" class="text-sm underline">← Ко всем кейсам</a>
+      <header class="mt-4">
+        <h1 class="text-3xl font-bold">{title}</h1>
+        {subtitle && <p class="text-gray-600 mt-1">{subtitle}</p>}
+        <div class="flex flex-wrap gap-3 mt-3 text-sm text-gray-700">
+          {period && <span>Период: {period}</span>}
+          {role.length > 0 && <span>Роль: {role.join(', ')}</span>}
+        </div>
+        {impact.length > 0 && (
+          <ul class="mt-4 list-disc pl-6 space-y-1 text-gray-800">
+            {impact.map((i) => <li>{i}</li>)}
+          </ul>
+        )}
+        {cover && <img src={cover} alt={title} class="mt-6 rounded-xl w-full" />}
+      </header>
+
+      <article class="prose max-w-none mt-8">
+        <Content />
+      </article>
+
+      <div class="mt-10">
+        <a href="/" class="underline">← На главную</a>
+      </div>
+    </main>
+  </body>
+</html>
