@@ -1,14 +1,27 @@
 ---
 import '../../styles/global.css';
 
-const modules = import.meta.glob('../../content/cases/*.mdx', { eager: true });
-const slug = Astro.params.slug;
-const entry = Object.entries(modules).find(([p]) => p.endsWith(`${slug}.mdx`));
+// 1) Сообщаем Astro, какие пути нужно собрать статически
+export async function getStaticPaths() {
+  const modules = import.meta.glob('../../content/cases/*.mdx');
+  const paths = Object.keys(modules).map((p) => {
+    const slug = p.split('/').pop().replace('.mdx', '');
+    return { params: { slug } };
+  });
+  return paths;
+}
 
-if (!entry) {
+// 2) На странице берем нужный MDX по slug
+const modules = import.meta.glob('../../content/cases/*.mdx', { eager: true });
+
+const { slug } = Astro.params;
+const mod = modules[`../../content/cases/${slug}.mdx`];
+
+if (!mod) {
+  // если вдруг нет файла — отправляем на главную
   return Astro.redirect('/', 302);
 }
-const [, mod] = entry;
+
 const { frontmatter, default: Content } = mod;
 const { title, subtitle, period, role = [], impact = [], cover } = frontmatter;
 ---
