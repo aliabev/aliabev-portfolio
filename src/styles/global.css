@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Aeroport';
+  src: url('/fonts/Aeroport Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,4 +16,14 @@
   html { font-feature-settings: "liga" on; }
   body { background-color: #3E3E3E; } /* серый фон страницы */
   .container { @apply max-w-6xl mx-auto px-4; }
+}
+
+@layer base {
+  h3.case-title {
+    font-family: 'Aeroport', sans-serif;
+    font-weight: 400;
+    font-size: 140px;
+    letter-spacing: -0.03em; /* −3 % */
+    line-height: 1.05;
+  }
 }
