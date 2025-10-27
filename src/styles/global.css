@@ -6,6 +6,6 @@
 
 @layer base {
   html { font-feature-settings: "liga" on; }
-  body { @apply bg-gray-100 text-gray-900; } /* серый фон страницы */
+  body { background-color: #3E3E3E; } /* серый фон страницы */
   .container { @apply max-w-6xl mx-auto px-4; }
 }
