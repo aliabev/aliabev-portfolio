@@ -12,6 +12,7 @@ const { title = "Портфолио — Дмитрий Алябьев" } = Astro
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="antialiased font-sans text-gray-900">
+{false && (
     <header class="sticky top-0 bg-white/80 backdrop-blur border-b">
       <div class="container flex items-center justify-between py-3">
         <a href="/" class="font-semibold tracking-[-0.01em]">Dmitrii Aliabev — Portfolio</a>
@@ -20,7 +21,7 @@ const { title = "Портфолио — Дмитрий Алябьев" } = Astro
         </nav>
       </div>
     </header>
-
+)}
     <main class="container py-10">
       <slot />
     </main>
