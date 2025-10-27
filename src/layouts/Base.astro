@@ -1,0 +1,32 @@
+---
+const { title = "Портфолио — Дмитрий Алябьев" } = Astro.props;
+---
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <!-- Шрифт, как в Figma (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="antialiased font-sans text-gray-900">
+    <header class="sticky top-0 bg-white/80 backdrop-blur border-b">
+      <div class="container flex items-center justify-between py-3">
+        <a href="/" class="font-semibold tracking-[-0.01em]">Dmitrii Aliabev — Portfolio</a>
+        <nav class="text-sm">
+          <a href="mailto:you@example.com" class="underline">Написать мне</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-10">
+      <slot />
+    </main>
+
+    <footer class="container py-14 text-sm text-gray-500">
+      © {new Date().getFullYear()} Dmitrii Aliabev
+    </footer>
+  </body>
+</html>
