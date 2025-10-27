@@ -1,0 +1,40 @@
+---
+const {
+  title = "Дима Алябьев",
+  description = "Более 15 лет улучшаю дизайн в продуктовых командах финтеха и классифайда...",
+  cvHref = "/cv.pdf",
+  tgHref = "https://t.me/alyabev",
+  imageSrc = "/assets/hero.jpg"
+} = Astro.props;
+---
+<section class="mt-6">
+  <div class="rounded-[28px] bg-[#0d0b18] text-white shadow-lg">
+    <div class="grid md:grid-cols-2 gap-8 items-center p-6 md:p-10">
+      <!-- Текст слева -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
+          {title}
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-300">
+          {description}
+        </p>
+
+        <div class="mt-8 flex items-center gap-8">
+          <a href={cvHref} class="underline underline-offset-4">CV</a>
+          <a href={tgHref} class="inline-flex items-center gap-2 underline underline-offset-4">
+            <!-- Иконка Telegram -->
+            <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M9.18 14.56 8.99 18c.39 0 .56-.17.76-.37l1.82-1.76 3.77 2.76c.69.38 1.18.18 1.36-.64l2.47-11.58c.25-1.16-.42-1.61-1.17-1.33L3.92 9.53c-1.11.43-1.09 1.05-.19 1.32l4.2 1.31 9.73-6.13c.46-.28.88-.13.53.16z"/></svg>
+            Написать мне
+          </a>
+        </div>
+      </div>
+
+      <!-- Картинка справа -->
+      <div class="flex justify-center md:justify-end">
+        <div class="relative w-[420px] max-w-full">
+          <img src={imageSrc} alt="Фото/коллаж" class="w-full rounded-full border border-white/10 shadow-2xl object-cover" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
