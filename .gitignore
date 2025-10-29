@@ -1,0 +1,23 @@
+# deps & build
+node_modules/
+.astro/
+dist/
+
+# локальные сервисные папки
+.vercel/
+.pnpm-store/
+
+# IDE/OS мусор
+.DS_Store
+.idea/
+.vscode/
+
+# логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# секреты
+.env
+.env.*
