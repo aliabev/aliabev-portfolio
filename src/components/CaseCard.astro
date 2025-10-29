@@ -16,7 +16,8 @@ const {
   <h3 class="case-title">{title}</h3>
 
   <!-- Описание + метрики -->
-  <div class="mt-6 grid gap-6 md:grid-cols-[1fr,auto] items-start">
+  <div class="mt-6 grid gap-8 md:grid-cols-[0.65fr,0.35fr] items-start">
+
     <!-- Левая колонка: абзацы -->
     <div class="text-[20px] leading-[1.6] text-gray-800">
       {summary && summary.split('\n\n').map((p) => <p class="mt-4 first:mt-0">{p}</p>)}
