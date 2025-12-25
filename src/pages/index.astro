@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Base from '../layouts/Base.astro';
-import HeroIntro from '../components/HeroIntro.astro';
+import AboutIntro from '../components/AboutIntro.astro';
 import CaseCard from '../components/CaseCard.astro';
 
 const modules = import.meta.glob('../content/cases/*.mdx', { eager: true });
@@ -13,12 +13,12 @@ const cases = Object.entries(modules).map(([path, mod]) => {
 ---
 <Base title="Портфолио — Дмитрий Алябьев">
   <!-- Плашка-герой -->
-  <HeroIntro
+  <AboutIntro
     title="Дмитрий Алябьев"
-    description="Более 15 лет улучшаю дизайн в продуктовых командах финтеха и классифайда в роли: product designer, art-director, team-lead, product manager. С накопленным T-shape опытом выстраиваю кросс-функциональные процессы, интегрирую дизайн в продуктовую стратегию с фокусом на рост target-метрик. Развиваю дизайн-команды, но и не боюсь работы руками."
+    lead="Team Lead Product Designer. Более 15 лет улучшаю дизайн в продуктовых командах финтеха и классифайда в роли product designer, art director, team lead, product manager."
+    description="С накопленным T-shaped опытом выстраиваю кросс-функциональные процессы, интегрирую дизайн в продуктовую стратегию с фокусом на рост целевых метрик. Развиваю дизайн-команды, но и не боюсь работы руками."
     cvHref="/cv.pdf"
     tgHref="https://t.me/alyabev"
-    imageSrc="/assets/hero.jpg"
   />
 
   <section class="mt-6 space-y-6">
