@@ -1,0 +1,43 @@
+---
+const {
+  text = "Готов рассказать подробнее про эти и другие кейсы при личном знакомстве",
+  tgHref = "https://t.me/alyabev",
+} = Astro.props;
+---
+
+<footer class="mt-8 md:mt-10">
+  <div class="rounded-[22px] bg-[#0b0219] text-[#f8f6f2] overflow-hidden">
+    <!-- Desktop version (1400px) -->
+    <div class="hidden lg:flex items-start justify-between px-[70px] pt-[58px] pb-[70px]">
+      <p class="font-['Aeroport'] font-light text-[19px] text-[#f8f6f2] opacity-90 leading-normal w-[716px]">
+        {text}
+      </p>
+      <a 
+        href={tgHref} 
+        class="flex gap-[10px] items-center font-['Aeroport'] font-normal text-[19px] text-[#f8f6f2] opacity-90 underline underline-offset-[25%] decoration-solid"
+      >
+        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.18 14.56L8.99 18C9.38 18 9.55 17.83 9.75 17.63L12.57 14.89L16.34 17.65C16.85 17.98 17.34 17.78 17.51 17.14L20.98 5.52C21.23 4.36 20.56 3.89 19.83 4.17L3.92 9.53C2.81 9.96 2.81 10.58 3.73 10.88L8.12 12.23L15.93 6.26C16.39 5.98 16.81 6.13 16.46 6.42L10.32 12.07L9.18 14.56Z" fill="currentColor"/>
+        </svg>
+        Написать мне
+      </a>
+    </div>
+
+    <!-- Mobile version (375px) -->
+    <div class="flex lg:hidden flex-col gap-[28px] items-start px-[36px] pt-[36px] pb-[56px]">
+      <p class="font-['Aeroport'] font-light text-[19px] text-[#f8f6f2] opacity-90 leading-normal w-full">
+        {text}
+      </p>
+      <a 
+        href={tgHref} 
+        class="flex gap-[10px] items-center font-['Aeroport'] font-normal text-[19px] text-[#f8f6f2] opacity-90 underline underline-offset-[25%] decoration-solid"
+      >
+        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.18 14.56L8.99 18C9.38 18 9.55 17.83 9.75 17.63L12.57 14.89L16.34 17.65C16.85 17.98 17.34 17.78 17.51 17.14L20.98 5.52C21.23 4.36 20.56 3.89 19.83 4.17L3.92 9.53C2.81 9.96 2.81 10.58 3.73 10.88L8.12 12.23L15.93 6.26C16.39 5.98 16.81 6.13 16.46 6.42L10.32 12.07L9.18 14.56Z" fill="currentColor"/>
+        </svg>
+        Написать мне
+      </a>
+    </div>
+  </div>
+</footer>
+
