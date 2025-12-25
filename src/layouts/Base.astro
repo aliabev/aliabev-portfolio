@@ -1,4 +1,6 @@
 ---
+import Footer from '../components/Footer.astro';
+
 const { title = "Портфолио — Дмитрий Алябьев" } = Astro.props;
 ---
 <html lang="ru">
@@ -29,8 +31,8 @@ const { title = "Портфолио — Дмитрий Алябьев" } = Astro
       <slot />
     </main>
 
-    <footer class="container py-14 text-sm text-gray-500">
-      © {new Date().getFullYear()} Dmitrii Aliabev
-    </footer>
+    <div class="container">
+      <Footer />
+    </div>
   </body>
 </html>
