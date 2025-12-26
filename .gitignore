@@ -1,23 +1,26 @@
-# deps & build
-node_modules/
-.astro/
+# build output
 dist/
+.output/
 
-# локальные сервисные папки
-.vercel/
-.pnpm-store/
+# generated types
+.astro/
 
-# IDE/OS мусор
-.DS_Store
-.idea/
-.vscode/
+# dependencies
+node_modules/
 
-# логи
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# секреты
+# environment variables
 .env
-.env.*
+.env.production
+
+# macOS-specific
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
